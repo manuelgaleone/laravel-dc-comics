@@ -23,7 +23,7 @@
                             <a class="menu_item" href="#">CHARACTERS</a>
                         </li>
                         <li class="menu_element">
-                            <a class="menu_item active" href="#">COMICS</a>
+                            <a class="menu_item active">COMICS</a>
                             <div class="rectangle_active">
 
                             </div>

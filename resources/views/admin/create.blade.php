@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="heading">
+    <h1 class="text-center py-5 color-white">
+        Aggiungi un fumetto:
+    </h1>
+</div>
 <form action="{{route('comics.store')}}" method="post" class="card p-3">
     @csrf
     <div class="mb-3">
