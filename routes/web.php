@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $comics = config('comics');
-
-    return view('home', [
-        'comics' => $comics,
-    ]);
-})->name('home');
+Route::get('/', [PageController::class, 'home'])->name('home');

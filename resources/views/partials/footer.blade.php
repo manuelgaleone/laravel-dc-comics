@@ -133,13 +133,13 @@
 </div>
 <div class="bottom_footer">
     <div class="container">
-        <div class="row align_items justify_end">
+        <div class="row align_items justify-content-between">
             <div class="col-4">
                 <a class="footer_button" href="#">SIGN UP NOW!</a>
             </div>
-            <div class="col-8 d_flex align_items">
-                <span class="follow_footer">FOLLOW US</span>
+            <div class="col-8 d_flex align_items justify-content-end">
                 <div class="social_icons align_items d_flex">
+                    <span class="follow_footer">FOLLOW US</span>
                     <img class="social_icon" src="{{ Vite::asset('resources/images/footer-facebook.png') }}" alt="Social Icons">
                     <img class="social_icon" src="{{ Vite::asset('resources/images/footer-twitter.png') }}" alt="Social Icons">
                     <img class="social_icon" src="{{ Vite::asset('resources/images/footer-youtube.png') }}" alt="Social Icons">
