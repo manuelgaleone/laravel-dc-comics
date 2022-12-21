@@ -20,7 +20,9 @@
                     <td>{{$comic->title}}</td>
                     <td>{{$comic->description}}</td>
                     <td>
-                        <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+                        <a href="{{route('admin.show', $comic->id)}}">
+                            <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+                        </a>
                     </td>
                     <td>{{$comic->price}}</td>
                 </tr>
