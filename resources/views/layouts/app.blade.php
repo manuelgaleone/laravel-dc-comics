@@ -24,7 +24,7 @@
             </div>
 
             <main>
-                @yield('main-content')
+                @yield('content')
             </main>
 
             <div class="load_more text_center d_flex justify_center">
