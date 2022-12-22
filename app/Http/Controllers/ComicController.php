@@ -41,9 +41,12 @@ class ComicController extends Controller
         $new_comic->description = $request['description'];
         $new_comic->thumb = $request['thumb'];
         $new_comic->price = $request['price'];
+        $new_comic->series = $request['series'];
+        $new_comic->sale_date = $request['sale_date'];
+        $new_comic->type = $request['type'];
         $new_comic->save();
 
-        return to_route('admin.comics.index');
+        return to_route('comics.index');
     }
 
     /**
@@ -72,11 +75,12 @@ class ComicController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  \App\Models\Comic  $comic
+     * @param  int 
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $Comic)
+    public function update(Request $request, Comic $comic)
     {
+
         $data = [
             'title' => $request['title'],
             'thumb' => $request['thumb'],
@@ -87,7 +91,7 @@ class ComicController extends Controller
         $comic->update($data);
 
         // return redirect()->route('products.index');
-        return to_route('products.index')->with('message', "$comic->title updated successfully");
+        return to_route('comics.index');
     }
 
     /**

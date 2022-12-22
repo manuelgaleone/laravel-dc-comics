@@ -26,6 +26,21 @@
             <input type="text" name="price" id="price" class="form-control" placeholder="29.99usd" aria-describedby="helpId">
         </div>
     </div>
+    <div class="mb-3">
+        <div class="mb-3">
+            <input type="text" name="series" id="series" class="form-control" placeholder="Serie 1" aria-describedby="helpId">
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="mb-3">
+            <input type="text" name="sale_date" id="sale_date" class="form-control" placeholder="2018-04-12" aria-describedby="helpId">
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="mb-3">
+            <input type="text" name="type" id="type" class="form-control" placeholder="Fumetto" aria-describedby="helpId">
+        </div>
+    </div>
     <button type="submit" class="btn btn-primary">Invia!</button>
 </form>
 @endsection

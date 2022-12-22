@@ -8,7 +8,7 @@
 </div>
 <form action="{{route('comics.update', $comic->id)}}" method="post" class="card p-3">
     @csrf
-    @method('PUT')
+    {{ method_field('put') }}
     <div class="mb-3">
         <input type="text" name="title" id="title" class="form-control" value="{{$comic->title}}" aria-describedby="helpId">
     </div>
