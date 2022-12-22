@@ -20,13 +20,13 @@
                 <div class="menu_elements">
                     <ul class="d_flex align_items m-0 justify-content-end">
                         <li class="menu_element">
-                            <a class="menu_item active">COMICS</a>
+                            <a class="menu_item {{ Route::currentRouteName() === 'home' ? 'active' : '' }}" href="{{route('home')}}">COMICS</a>
                         </li>
                         <li class="menu_element">
-                            <a class="menu_item" href="#">ADMIN COMICS</a>
+                            <a class="menu_item {{ Route::currentRouteName() === 'comics.index' ? 'active' : '' }}" href="{{route('comics.index')}}">ADMIN COMICS</a>
                         </li>
                         <li class="menu_element">
-                            <a class="menu_item" href="#">CREATE COMIC</a>
+                            <a class="menu_item {{ Route::currentRouteName() === 'comics.create' ? 'active' : '' }}" href="{{route('comics.create')}}">CREATE COMIC</a>
                         </li>
                     </ul>
                 </div>
