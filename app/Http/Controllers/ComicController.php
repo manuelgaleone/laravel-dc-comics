@@ -15,7 +15,7 @@ class ComicController extends Controller
     public function index()
     {
         $comics = Comic::all();
-        return view('admin.index', compact('comics'));
+        return view('admin.comics.index', compact('comics'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        return view('admin.comics.create');
     }
 
     /**
@@ -36,7 +36,14 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        return view('admin.store');
+        $new_comic = new Comic();
+        $new_comic->title = $request['title'];
+        $new_comic->description = $request['description'];
+        $new_comic->thumb = $request['thumb'];
+        $new_comic->price = $request['price'];
+        $new_comic->save();
+
+        return to_route('admin.comics.index');
     }
 
     /**
@@ -47,8 +54,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        $comics = Comic::all();
-        return view('admin.show', compact('comic'));
+        return view('admin.comics.show', compact('comic'));
     }
 
     /**
@@ -57,21 +63,31 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('admin.comics.edit', compact('comic'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $Comic)
     {
-        //
+        $data = [
+            'title' => $request['title'],
+            'thumb' => $request['thumb'],
+            'description' => $request['description'],
+            'price' => $request['price']
+        ];
+
+        $comic->update($data);
+
+        // return redirect()->route('products.index');
+        return to_route('products.index')->with('message', "$comic->title updated successfully");
     }
 
     /**

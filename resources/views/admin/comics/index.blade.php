@@ -11,6 +11,7 @@
                     <th scope="col">DESCRIPTION</th>
                     <th scope="col">THUMB</th>
                     <th scope="col">PRICE</th>
+                    <th scope="col">ACTIONS</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,11 +21,14 @@
                     <td>{{$comic->title}}</td>
                     <td>{{$comic->description}}</td>
                     <td>
-                        <a href="{{route('admin.show', $comic->id)}}">
-                            <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
-                        </a>
+                        <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
                     </td>
                     <td>{{$comic->price}}</td>
+                    <td>
+                        <a class="btn btn-primary mb-2" href="#">View</a>
+                        <a class="btn btn-secondary mb-2" href='{{route("comics.edit", $comic->id)}}'>Edit</a>
+                        <a class="btn btn-danger mb-2" href="#">Remove</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
