@@ -18,39 +18,15 @@
             </div>
             <div class="menu_header col-8">
                 <div class="menu_elements">
-                    <ul class="d_flex align_items m-0">
-                        <li class="menu_element">
-                            <a class="menu_item" href="#">CHARACTERS</a>
-                        </li>
+                    <ul class="d_flex align_items m-0 justify-content-end">
                         <li class="menu_element">
                             <a class="menu_item active">COMICS</a>
-                            <div class="rectangle_active">
-
-                            </div>
                         </li>
                         <li class="menu_element">
-                            <a class="menu_item" href="#">MOVIES</a>
+                            <a class="menu_item" href="#">ADMIN COMICS</a>
                         </li>
                         <li class="menu_element">
-                            <a class="menu_item" href="#">TV</a>
-                        </li>
-                        <li class="menu_element">
-                            <a class="menu_item" href="#">GAMES</a>
-                        </li>
-                        <li class="menu_element">
-                            <a class="menu_item" href="#">COLLECTIBLES</a>
-                        </li>
-                        <li class="menu_element">
-                            <a class="menu_item" href="#">VIDEOS</a>
-                        </li>
-                        <li class="menu_element">
-                            <a class="menu_item" href="#">FANS</a>
-                        </li>
-                        <li class="menu_element">
-                            <a class="menu_item" href="#">NEWS</a>
-                        </li>
-                        <li class="menu_element">
-                            <a class="menu_item" href="#">SHOP</a>
+                            <a class="menu_item" href="#">CREATE COMIC</a>
                         </li>
                     </ul>
                 </div>
