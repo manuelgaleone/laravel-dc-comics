@@ -43,7 +43,7 @@ class ComicController extends Controller
         $val_data = $request->validated();
 
         // Saving
-        $product = Comic::create($val_data);
+        $comic = Comic::create($val_data);
 
         /* $val_data = $request->validate([
             'title' => 'required|min:10|max:100',
@@ -109,7 +109,7 @@ class ComicController extends Controller
 
         $comic->update($data); */
 
-        // return redirect()->route('products.index');
+        // return redirect()->route('comics.index');
         return to_route('comics.index');
     }
 
