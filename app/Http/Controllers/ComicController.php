@@ -38,7 +38,7 @@ class ComicController extends Controller
     {
 
         $val_data = $request->validate([
-            'title' => 'min:10'
+            'title' => 'required|min:10|max:100'
         ]);
 
         $new_comic = new Comic();
