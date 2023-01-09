@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 
 class ComicController extends Controller
 {
@@ -34,16 +36,22 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
 
-        $val_data = $request->validate([
+        // Validation
+        $val_data = $request->validated();
+
+        // Saving
+        $product = Comic::create($val_data);
+
+        /* $val_data = $request->validate([
             'title' => 'required|min:10|max:100',
             'description' => 'max:255',
             'thumb' => 'required'
-        ]);
+        ]); */
 
-        $new_comic = new Comic();
+        /* $new_comic = new Comic();
         $new_comic->title = $request['title'];
         $new_comic->description = $request['description'];
         $new_comic->thumb = $request['thumb'];
@@ -51,7 +59,7 @@ class ComicController extends Controller
         $new_comic->series = $request['series'];
         $new_comic->sale_date = $request['sale_date'];
         $new_comic->type = $request['type'];
-        $new_comic->save();
+        $new_comic->save(); */
 
         return to_route('comics.index');
     }
@@ -85,17 +93,21 @@ class ComicController extends Controller
      * @param  int 
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
 
-        $data = [
+        $val_data = $request->validated();
+
+        $comic->update($val_data);
+
+        /* $data = [
             'title' => $request['title'],
             'thumb' => $request['thumb'],
             'description' => $request['description'],
             'price' => $request['price']
         ];
 
-        $comic->update($data);
+        $comic->update($data); */
 
         // return redirect()->route('products.index');
         return to_route('comics.index');
