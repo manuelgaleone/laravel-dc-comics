@@ -22,7 +22,7 @@
     </div>
     <div class="mb-3">
         <div class="mb-3">
-            <textarea class="form-control" name="description" id="description" value="{{old('description')}}" placeholder="Le straordinarie avventure di Spiderman" rows="3" required></textarea>
+            <textarea class="form-control" name="description" id="description" placeholder="Le straordinarie avventure di Spiderman" rows="3" required>{{old('description')}}</textarea>
         </div>
     </div>
     <div class="mb-3">
