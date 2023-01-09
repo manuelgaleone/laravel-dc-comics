@@ -33,4 +33,24 @@ class UpdateComicRequest extends FormRequest
             'type' => 'required|max:20'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Inserisci il titolo!',
+            'title.unique' => "Il titolo dev'essere unico!",
+            'title.min' => "Il titolo deve avere minimo :min caratteri!",
+            'title.max' => "Il titolo deve avere massimo :max caratteri!",
+            'description.required' => 'Inserisci la Descrizione!',
+            'description.max' => "La descrizione deve avere massimo :max caratteri!",
+            'price.required' => 'Inserisci il Prezzo!',
+            'price.max' => "Il prezzo deve avere massimo :max caratteri!",
+            'series.required' => 'Inserisci la Serie!',
+            'series.max' => "La serie deve avere massimo :max caratteri!",
+            'sale_date.required' => "Inserisci la Data d'Acquisto!",
+            'sale_date.max' => "La Data d'acquisto deve avere massimo :max caratteri!",
+            'type.required' => 'Inserisci il tipo!',
+            'type.max' => "Il tipo deve avere massimo :max caratteri!"
+        ];
+    }
 }
